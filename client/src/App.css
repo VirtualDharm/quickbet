@@ -1,0 +1,88 @@
+/* App.css */
+
+/* Center the content vertically and horizontally */
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Form container styling */
+.form-container {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Input field styling */
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Button styling */
+.form-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+/* Dashboard container styling */
+.dashboard-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styling */
+.dashboard-container h2 {
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+.dashboard-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Table styling */
+.dashboard-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-container th,
+.dashboard-container td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.dashboard-container th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.dashboard-container tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
