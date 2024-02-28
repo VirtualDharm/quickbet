@@ -101,7 +101,7 @@ const Dashboard = ({ token, userName, onLogout }) => {
         <button onClick={onLogout}>Logout</button>
         <br />
         <div style={{ height: "100px", width: "100px", background: "red" }}>
-          <img src="wheel_image.jpg" alt="Wheel" />
+          <img src="/images/wheel.png" alt="Wheel" style={{width: "-webkit-fill-available"}} /> 
           <br />
         </div>
         <button onClick={handleSpinWheel}>Spin Wheel</button>

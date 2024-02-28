@@ -6,15 +6,18 @@ import { registerUser } from './apiService';
 const Register = ({ onRegister }) => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleRegister = async () => {
     try {
       const token = await registerUser(userName, password);
-      console.log('getting token on register: ',token)
       localStorage.setItem('quickbet_token', token);
       onRegister(token);
     } catch (error) {
-      console.error('Registration failed:', error.message);
+      setErrorMessage(`Registration failed: ${error.message}`);
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 2000);
     }
   };
 
@@ -34,6 +37,11 @@ const Register = ({ onRegister }) => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button onClick={handleRegister}>Register</button>
+      {errorMessage && (
+        <div className="error-popup" style={{ color: 'red', position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>    
+          <p>{errorMessage}</p>
+        </div>
+      )}
     </div>
   );
 };

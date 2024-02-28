@@ -1,3 +1,5 @@
+//App.js
+
 import React, { useState, useEffect } from 'react';
 import Login from './components/login';
 import Register from './components/register';
@@ -6,11 +8,10 @@ import './App.css';
 
 const App = () => {
   const [token, setToken] = useState('');
-  const [isNewUser, setIsNewUser] = useState(false); // Assume new user by default
+  const [isNewUser, setIsNewUser] = useState(false);
   const [userName, setUserName] = useState('');
 
   useEffect(() => {
-    // Check if token exists in localStorage
     const storedToken = localStorage.getItem('quickbet_token');
     if (storedToken) {
       setToken(storedToken);
@@ -30,10 +31,9 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    // Remove token from localStorage and reset state
     localStorage.removeItem('quickbet_token');
     setToken('');
-    setIsNewUser(true);
+    setIsNewUser(false);
     setUserName('');
   };
 
