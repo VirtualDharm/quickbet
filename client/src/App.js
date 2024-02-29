@@ -19,8 +19,9 @@ const App = () => {
     }
   }, []);
 
-  const handleRegister = (token) => {
+  const handleRegister = (token, userName) => {
     setToken(token);
+    setUserName(userName);
     setIsNewUser(false); 
   };
 

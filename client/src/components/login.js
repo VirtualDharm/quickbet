@@ -12,7 +12,7 @@ const Login = ({ onLogin }) => {
     try {
       const token = await loginUser(userName, password);
       localStorage.setItem('quickbet_token', token);
-      onLogin(token);
+      onLogin(token,userName);
     } catch (error) {
       setErrorMessage(`Login failed: ${error.message}`);
       setTimeout(() => {

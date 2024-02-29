@@ -12,7 +12,7 @@ const Register = ({ onRegister }) => {
     try {
       const token = await registerUser(userName, password);
       localStorage.setItem('quickbet_token', token);
-      onRegister(token);
+      onRegister(token,userName);
     } catch (error) {
       setErrorMessage(`Registration failed: ${error.message}`);
       setTimeout(() => {
