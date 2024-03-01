@@ -123,7 +123,7 @@ const SpinWheel = ({ token, fetchLatestBet, setPoolAmount }) => {
 
   return (
     <div>
-      <h1>JACKPOT</h1>
+      <h1 className='heading'>JACKPOT</h1>
       <div className="container">
         <div className="wheel_box">
           <canvas id="spinWheel"></canvas>

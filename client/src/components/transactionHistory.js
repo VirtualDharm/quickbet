@@ -25,7 +25,7 @@ const TransactionHistory = ({ transactionHistory }) => {
   ];
 
   return (
-    <div>
+    <div style={{ color: "white", textAlign: "center" }}>
       <p>Transaction History</p>
       <table style={{ borderCollapse: "collapse", width: "100%", border: "1px solid black" }}>
         <thead>

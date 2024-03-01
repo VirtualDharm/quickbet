@@ -1,9 +1,9 @@
 // PlaceBet.js
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const PlaceBet = ({ onPlaceBet }) => {
-  const [betAmount, setBetAmount] = useState(0);
-  const [selectedNumber, setSelectedNumber] = useState(0);
+  const [betAmount, setBetAmount] = useState('');
+  const [selectedNumber, setSelectedNumber] = useState('');
 
   const handlePlaceBet = () => {
     onPlaceBet(selectedNumber, betAmount);
@@ -13,14 +13,17 @@ const PlaceBet = ({ onPlaceBet }) => {
   };
 
   return (
-    <div>
-      <h3>Place a Bet</h3><br/>
+    <div style={{ color: "white", textAlign: "center" }}>
+      <h3>Place a Bet : <button onClick={handlePlaceBet}>Click here</button></h3>
+      <br />
       <input
         type="number"
         value={betAmount}
         onChange={(e) => setBetAmount(e.target.value)}
         placeholder="Enter Bet Amount"
-      /><br/>
+        style={{ width: "80%"}}
+      />
+      <br />
       <input
         type="number"
         value={selectedNumber}
@@ -28,8 +31,8 @@ const PlaceBet = ({ onPlaceBet }) => {
         placeholder="Enter Selected Number (0-30)"
         min="0"
         max="30"
-      /><br/>
-      <button onClick={handlePlaceBet}>Place Bet</button>
+        style={{ width: "80%"}}
+      />
     </div>
   );
 };

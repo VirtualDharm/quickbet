@@ -1,6 +1,4 @@
 //dashboard.js
-//dashboard.js
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SpinWheel from "./SpinWheel";
@@ -86,6 +84,8 @@ const Dashboard = ({ token, userName, onLogout }) => {
             poolAmount={poolAmount}
             userAmount={userAmount}
           />
+          {/* Logout Button */}
+          <button onClick={onLogout}  style={{position:"absolute", top:"3%", right:"3%" }}>Logout</button>
         </div>
         <div style={{ borderBottom: "1px solid #ccc", display: "grid", gridTemplateColumns: "50% 50%" }}>
           {/* LatestBet */}

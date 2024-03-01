@@ -39,7 +39,7 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div style={{ color:"white"}}>
       {!token && isNewUser && (
         <div>
           <Register onRegister={handleRegister} />
