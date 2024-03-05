@@ -7,12 +7,10 @@ import PlaceBet from "./placeBet";
 import LatestBet from "./latestBet";
 import TransactionHistory from "./transactionHistory";
 
-const Dashboard = ({ token, userName, onLogout }) => {
+const Dashboard = ({ token, userName, balance, poolSize, onLogout }) => {
   const [latestBet, setLatestBet] = useState("");
   const [transactionHistory, setTransactionHistory] = useState([]);
-  const [poolAmount, setPoolAmount] = useState(100);
-  const [userAmount, setUserAmount] = useState(10);
-
+  
   useEffect(() => {
     fetchLatestBet();
     fetchTransactionHistory();
@@ -81,8 +79,8 @@ const Dashboard = ({ token, userName, onLogout }) => {
         <div style={{ borderBottom: "1px solid #ccc" }}>
           <UserInfo
             userName={userName}
-            poolAmount={poolAmount}
-            userAmount={userAmount}
+            userAmount={balance}
+            poolAmount={poolSize}
           />
           {/* Logout Button */}
           <button onClick={onLogout}  style={{position:"absolute", top:"3%", right:"3%" }}>Logout</button>
@@ -108,9 +106,9 @@ const Dashboard = ({ token, userName, onLogout }) => {
           token={token}
           fetchLatestBet={fetchLatestBet}
           updateTransactionHistory={updateTransactionHistory}
-          setPoolAmount={setPoolAmount}
-          setUserAmount={setUserAmount}
-          poolAmount={poolAmount}
+          // setPoolAmount={setPoolAmount}
+          // setUserAmount={setUserAmount}
+          // poolAmount={poolAmount}
         />
       </div>
     </div>

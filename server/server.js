@@ -1,14 +1,11 @@
+// server.js
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const authRoutes = require('./routes/auth');
-// const gameRoutes = require('./routes/game');
-
-// Import models
-// const User = require('./models/User');
-// const RouletteGame = require('./models/RouletteGame');
-// const GameHistory = require('./models/GameHistory');
+const betRoutes = require('./routes/bet');
+const poolSizeRoutes = require('./routes/poolSize');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -19,7 +16,8 @@ app.use(cors());
 
 // Routes
 app.use('/auth', authRoutes);
-// app.use('/game', gameRoutes);
+app.use('/bets', betRoutes);
+app.use('/pool_sizes', poolSizeRoutes); // Use the new route file
 
 // MongoDB Connection
 const uri = 'mongodb+srv://lama:lama@cluster0.fsrfj2t.mongodb.net/quickbet?retryWrites=true&w=majority&appName=Cluster0'; 

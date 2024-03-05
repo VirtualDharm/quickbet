@@ -1,7 +1,7 @@
 // userInfo.js
 import React from 'react';
 
-const UserInfo = ({ userName, poolAmount, userAmount }) => {
+const UserInfo = ({ userName,userAmount, poolAmount }) => {
   const currentTime = new Date();
   const formattedTime = currentTime.toLocaleTimeString('en-US', { hour12: false }).slice(0, 5);
   return (

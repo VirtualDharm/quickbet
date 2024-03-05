@@ -10,9 +10,9 @@ const Login = ({ onLogin }) => {
 
   const handleLogin = async () => {
     try {
-      const token = await loginUser(userName, password);
+      const {token, balance, poolSize} = await loginUser(userName, password);
       localStorage.setItem('quickbet_token', token);
-      onLogin(token,userName);
+      onLogin(token,userName,balance, poolSize);
     } catch (error) {
       setErrorMessage(`Login failed: ${error.message}`);
       setTimeout(() => {
